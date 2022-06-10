@@ -51,6 +51,18 @@ xui.Class('App', 'xui.Module',{
                         "event" : 1
                     }
                 ])
+                .onChecked([
+                    {
+                        "desc" : "Action 1",
+                        "type" : "page",
+                        "target" : "App.taille",
+                        "args" : [true],
+                        "method" : "switch",
+                        "timeout" : 100,
+                        "resetid" : "",
+                        "event" : 1
+                    }
+                ])
                 .setCustomStyle({
                     "KEY" : {
                         "color" : "#87CEFA"

@@ -31,6 +31,26 @@ xui.Class('App', 'xui.Module',{
                 .setZIndex(1002)
                 .setCaption("weprint")
                 .setFontSize("22px")
+                .onValueChange([
+                    {
+                        "desc" : "Action 1",
+                        "type" : "page",
+                        "target" : "App.taille",
+                        "args" : [true],
+                        "method" : "switch"
+                    },
+                    "_xui_ui_button4_onvaluechange"
+                ])
+                .onContextmenu([
+                    {
+                        "desc" : "Action 1",
+                        "type" : "page",
+                        "target" : "App.taille",
+                        "args" : [true],
+                        "method" : "switch",
+                        "event" : 1
+                    }
+                ])
                 .setCustomStyle({
                     "KEY" : {
                         "color" : "#87CEFA"
@@ -46,6 +66,18 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
+        },
+        /**
+         * Fired when control's inner value is changed!
+         * @method onValueChange [xui.UI.Button event]
+         * @param {xui.UIProfile.} profile  The current control's profile object
+         * @param {String} oldValue ,  old Value
+         * @param {String} newValue , new Value
+         * @param {Boolean} force , force to call or not
+         * @param {call} tag  extra info
+        */
+        _xui_ui_button4_onvaluechange:function(profile, oldValue, newValue, force, tag){
+            var ns = this, uictrl = profile.boxing();
         }
         /*,
         // To determine how properties affects this module

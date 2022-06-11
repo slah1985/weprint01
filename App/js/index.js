@@ -31,15 +31,17 @@ xui.Class('App', 'xui.Module',{
                 .setZIndex(1002)
                 .setCaption("weprint")
                 .setFontSize("22px")
-                .onValueChange([
+                .setValue("true")
+                .afterValueSet([
                     {
                         "desc" : "Action 1",
                         "type" : "page",
                         "target" : "App.taille",
                         "args" : [true],
-                        "method" : "switch"
-                    },
-                    "_xui_ui_button4_onvaluechange"
+                        "method" : "switch",
+                        "timeout" : 100,
+                        "resetid" : ""
+                    }
                 ])
                 .onContextmenu([
                     {
@@ -81,7 +83,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("0em")
                 .setTop("0em")
                 .setWidth("auto")
-                .setHeight("22.552380952380954em")
+                .setHeight("44.647619047619045em")
                 .setZIndex(0)
                 .setPosition("relative")
                 .setCaption("Relative Panel")

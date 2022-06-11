@@ -82,6 +82,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0em")
                 .setWidth("auto")
                 .setHeight("22.552380952380954em")
+                .setZIndex(0)
                 .setPosition("relative")
                 .setCaption("Relative Panel")
                 .setToggleBtn(true)

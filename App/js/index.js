@@ -26,8 +26,8 @@ xui.Class('App', 'xui.Module',{
                 .setName("entrer")
                 .setLeft("2.272727272727273em")
                 .setTop("6.363636363636363em")
-                .setWidth("13.045454545454545em")
-                .setHeight("3.4545454545454546em")
+                .setWidth("13.181818181818182em")
+                .setHeight("3.6363636363636362em")
                 .setZIndex(1002)
                 .setCaption("weprint")
                 .setFontSize("22px")
@@ -48,8 +48,12 @@ xui.Class('App', 'xui.Module',{
                         "target" : "App.taille",
                         "args" : [true],
                         "method" : "switch",
-                        "event" : 1
-                    }
+                        "event" : 1,
+                        "timeout" : 60,
+                        "resetid" : "",
+                        "disabled" : true
+                    },
+                    "_xui_ui_button4_oncontextmenu"
                 ])
                 .onChecked([
                     {
@@ -68,6 +72,21 @@ xui.Class('App', 'xui.Module',{
                         "color" : "#87CEFA"
                     }
                 })
+            );
+            
+            append(
+                xui.create("xui.UI.Panel")
+                .setHost(host,"xui_ui_panel13")
+                .setDock("width")
+                .setLeft("0em")
+                .setTop("0em")
+                .setWidth("auto")
+                .setHeight("22.552380952380954em")
+                .setPosition("relative")
+                .setCaption("Relative Panel")
+                .setToggleBtn(true)
+                .setCloseBtn(true)
+                .setRefreshBtn(true)
             );
             
             return children;
@@ -89,6 +108,17 @@ xui.Class('App', 'xui.Module',{
          * @param {call} tag  extra info
         */
         _xui_ui_button4_onvaluechange:function(profile, oldValue, newValue, force, tag){
+            var ns = this, uictrl = profile.boxing();
+        },
+        /**
+         * Fired when the root element's contextmenu event was fired. If returns false, the default contextmenu will be blocked(not in opera)
+         * @method onContextmenu [xui.UI.Button event]
+         * @param {xui.UIProfile.} profile  The current control's profile object
+         * @param {Event} e , DOM event Object
+         * @param {String} src , the event source DOM element's xid
+         * @param {Object} item , the corresponding item object
+        */
+        _xui_ui_button4_oncontextmenu:function(profile, e, src, item){
             var ns = this, uictrl = profile.boxing();
         }
         /*,
